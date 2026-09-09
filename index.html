@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NFCstars | Productos NFC + QR</title>
+<title>NFCstars | NFC + QR para negocios</title>
 
 <style>
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
 
 * {
     box-sizing: border-box;
@@ -15,27 +21,35 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #111;
-    background: #fff;
+    background: #ffffff;
     line-height: 1.5;
 }
 
-/* CABECERA */
+
+/* =========================
+   CABECERA
+========================= */
 
 header {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: white;
-    border-bottom: 1px solid #eee;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .nav {
     max-width: 1180px;
     margin: auto;
     padding: 18px 22px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,6 +65,11 @@ header {
     color: #e4ad16;
 }
 
+.logo-star {
+    color: #e4ad16;
+    margin-left: 4px;
+}
+
 nav a {
     color: #222;
     text-decoration: none;
@@ -59,76 +78,128 @@ nav a {
     font-weight: 600;
 }
 
-/* PORTADA */
+nav a:hover {
+    color: #e4ad16;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
 
 .hero {
-    background: #fafafa;
+    background: linear-gradient(135deg, #fafafa, #ffffff);
     padding: 75px 22px;
 }
 
 .hero-inner {
     max-width: 1180px;
     margin: auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 55px;
+
     align-items: center;
 }
 
 .badge {
     display: inline-block;
+
     background: #111;
-    color: white;
-    padding: 8px 13px;
+    color: #ffffff;
+
+    padding: 8px 14px;
+
     border-radius: 30px;
+
     font-size: 13px;
+
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 56px;
+    font-size: 58px;
     line-height: 1.02;
     letter-spacing: -2px;
+
     margin-bottom: 22px;
 }
 
 .hero p {
     font-size: 19px;
     color: #666;
+
     max-width: 590px;
+
     margin-bottom: 30px;
 }
 
+
+/* =========================
+   BOTONES
+========================= */
+
 .btn {
     display: inline-block;
+
     background: #111;
-    color: white;
+    color: #ffffff;
+
     text-decoration: none;
+
     padding: 15px 25px;
+
     border-radius: 9px;
+
     font-weight: 700;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.btn.gold {
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-gold {
     background: #e4ad16;
     color: #111;
+
     margin-left: 10px;
 }
 
+
+/* =========================
+   FOTO PORTADA
+========================= */
+
 .hero-photo {
-    background: white;
+    background: #ffffff;
+
     border-radius: 20px;
+
     padding: 12px;
-    box-shadow: 0 15px 45px rgba(0,0,0,.09);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.09);
 }
 
 .hero-photo img {
     width: 100%;
+
     display: block;
+
     border-radius: 12px;
 }
 
-/* SECCIONES */
+
+/* =========================
+   SECCIONES
+========================= */
 
 section {
     padding: 80px 22px;
@@ -141,45 +212,78 @@ section {
 
 .title {
     text-align: center;
+
     font-size: 38px;
+
     letter-spacing: -1px;
+
     margin-bottom: 12px;
 }
 
 .subtitle {
     text-align: center;
+
     color: #666;
+
     max-width: 650px;
-    margin: 0 auto 45px;
+
+    margin:
+        0 auto
+        45px;
 }
 
-/* PRODUCTOS */
+
+/* =========================
+   PRODUCTOS
+========================= */
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 24px;
 }
 
 .product {
-    border: 1px solid #eee;
+    border:
+        1px solid #e7e7e7;
+
     border-radius: 18px;
+
     overflow: hidden;
-    background: white;
-    transition: .2s;
+
+    background: #ffffff;
+
+    transition: 0.2s;
 }
 
 .product:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.08);
 }
 
-.product img {
+
+/* FOTO DEL PRODUCTO */
+
+.product-image {
     width: 100%;
+
     aspect-ratio: 1 / 1;
+
     object-fit: cover;
-    background: #f5f5f5;
+
+    display: block;
+
+    background: #f3f3f3;
 }
+
+
+/* CONTENIDO */
 
 .product-body {
     padding: 23px;
@@ -187,49 +291,108 @@ section {
 
 .product h3 {
     font-size: 22px;
-    margin-bottom: 18px;
+
+    margin-bottom: 17px;
 }
 
-/* PRECIOS */
+
+/* =========================
+   SELECTOR BLANCO / NEGRO
+========================= */
+
+.color-title {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.color-selector {
+    display: flex;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid #dddddd;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+.color-selector button {
+    width: 50%;
+
+    padding: 10px;
+
+    border: none;
+
+    background: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.color-selector button.active {
+    background: #111;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   PRECIOS
+========================= */
+
+.price-row {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
 
 .price {
-    font-size: 25px;
+    font-size: 27px;
+
     font-weight: 800;
-    margin-bottom: 18px;
 }
 
 .old-price {
     font-size: 17px;
+
     color: #888;
+
     text-decoration: line-through;
-    font-weight: 500;
-    margin-left: 8px;
 }
 
-/* SELECTOR COLOR */
 
-.color-selector {
-    margin-bottom: 18px;
-}
+/* =========================
+   BOTÓN PRODUCTO
+========================= */
 
-.color-selector label {
-    font-size: 14px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 7px;
-}
-
-.color-selector select {
+.product-button {
     width: 100%;
-    padding: 11px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: white;
-    font-size: 15px;
-    cursor: pointer;
+
+    text-align: center;
+
+    background: #e4ad16;
+
+    color: #111;
 }
 
-/* COMO FUNCIONA */
+
+/* =========================
+   COMO FUNCIONA
+========================= */
 
 .how {
     background: #f7f7f7;
@@ -237,19 +400,26 @@ section {
 
 .steps {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .step {
-    background: white;
+    background: #ffffff;
+
     border-radius: 18px;
+
     padding: 30px;
+
     text-align: center;
 }
 
 .icon {
     font-size: 36px;
+
     margin-bottom: 15px;
 }
 
@@ -257,36 +427,64 @@ section {
     margin-bottom: 8px;
 }
 
-/* CONTACTO */
+
+/* =========================
+   CONTACTO
+========================= */
 
 .cta {
-    background: #111;
-    color: white;
+    background: #111111;
+
+    color: #ffffff;
+
     text-align: center;
+}
+
+.cta .title {
+    color: #ffffff;
 }
 
 .cta p {
-    color: #ccc;
+    color: #cccccc;
+
     max-width: 600px;
-    margin: 12px auto 25px;
+
+    margin:
+        12px auto
+        25px;
 }
 
-/* PIE */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: #0a0a0a;
-    color: #aaa;
+
+    color: #aaaaaa;
+
     text-align: center;
+
     padding: 28px;
+
     font-size: 13px;
 }
 
-/* MOVIL */
 
-@media(max-width:800px) {
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding: 15px;
+    }
 
     nav a {
-        margin-left: 9px;
+        margin-left: 8px;
+
         font-size: 12px;
     }
 
@@ -298,7 +496,10 @@ footer {
         font-size: 43px;
     }
 
-    .products,
+    .products {
+        grid-template-columns: 1fr;
+    }
+
     .steps {
         grid-template-columns: 1fr;
     }
@@ -311,7 +512,7 @@ footer {
         padding: 60px 18px;
     }
 
-    .btn.gold {
+    .btn-gold {
         margin-left: 5px;
     }
 
@@ -321,27 +522,44 @@ footer {
 
 </head>
 
+
 <body>
 
-<!-- CABECERA -->
+
+<!-- =========================
+     CABECERA
+========================= -->
 
 <header>
 
 <div class="nav">
 
 <div class="logo">
+
 NFC<span>stars</span>
+
+<span class="logo-star">★</span>
+
 </div>
+
 
 <nav>
 
-<a href="#inicio">Inicio</a>
+<a href="#inicio">
+Inicio
+</a>
 
-<a href="#productos">Productos</a>
+<a href="#productos">
+Productos
+</a>
 
-<a href="#como">Cómo funciona</a>
+<a href="#como">
+Cómo funciona
+</a>
 
-<a href="#contacto">Contacto</a>
+<a href="#contacto">
+Contacto
+</a>
 
 </nav>
 
@@ -349,178 +567,333 @@ NFC<span>stars</span>
 
 </header>
 
-<!-- PORTADA -->
 
-<section class="hero" id="inicio">
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section
+    class="hero"
+    id="inicio"
+>
 
 <div class="hero-inner">
+
 
 <div>
 
 <span class="badge">
+
 NFC + QR · Soluciones para negocios
+
 </span>
 
+
 <h1>
-Más reseñas. Más confianza. Más clientes.
+
+Más reseñas.
+<br>
+Más confianza.
+<br>
+Más clientes.
+
 </h1>
 
+
 <p>
+
 Facilita a tus clientes el acceso a tus reseñas con productos NFC y QR elegantes y fáciles de usar.
+
 </p>
 
-<a class="btn" href="#productos">
-Ver productos
+
+<a
+    class="btn"
+    href="#productos"
+>
+
+Ver productos →
+
 </a>
 
-<a class="btn gold" href="#contacto">
+
+<a
+    class="btn btn-gold"
+    href="#contacto"
+>
+
 Quiero el mío
+
 </a>
+
 
 </div>
+
+
 
 <div class="hero-photo">
 
 <img
-src="producto-original.jpg"
-alt="Producto NFCstars para reseñas"
-
+    src="stand-nfc.jpg"
+    alt="NFC con soporte"
 >
 
 </div>
+
 
 </div>
 
 </section>
 
-<!-- PRODUCTOS -->
 
-<section id="productos">
+
+<!-- =========================
+     PRODUCTOS
+========================= -->
+
+<section
+    id="productos"
+>
 
 <div class="wrap">
 
+
 <h2 class="title">
+
 Nuestros productos
+
 </h2>
 
+
 <p class="subtitle">
+
 Elige la solución NFC + QR que mejor encaje con tu negocio.
+
 </p>
+
+
 
 <div class="products">
 
-<!-- PRODUCTO 1 -->
+
+
+<!-- =========================
+     PRODUCTO 1
+========================= -->
 
 <article class="product">
 
-<img
-src="producto-original.jpg"
-alt="NFC con Soporte"
 
+<img
+    id="stand-image"
+    class="product-image"
+    src="stand-nfc.jpg"
+    alt="NFC con Soporte"
 >
+
 
 <div class="product-body">
 
+
 <h3>
+
 NFC con Soporte
+
 </h3>
+
+
+
+<div class="color-title">
+
+Color
+
+</div>
+
+
 
 <div class="color-selector">
 
-<label for="color">
-Color:
-</label>
 
-<select id="color" name="color">
+<button
+    id="white-button"
+    class="active"
+    onclick="selectColor('white')"
+>
 
-<option value="blanco">
 Blanco
-</option>
 
-<option value="negro">
+</button>
+
+
+<button
+    id="black-button"
+    onclick="selectColor('black')"
+>
+
 Negro
-</option>
 
-</select>
+</button>
+
 
 </div>
 
-<div class="price">
+
+
+<div class="price-row">
+
+<span class="price">
+
 17,99 €
-<span class="old-price">
-24,99 €
+
 </span>
+
+
+<span class="old-price">
+
+24,99 €
+
+</span>
+
 </div>
 
-<a class="btn" href="#contacto">
+
+
+<a
+    class="btn product-button"
+    href="#contacto"
+>
+
 Quiero el mío
+
 </a>
+
 
 </div>
 
 </article>
 
-<!-- PRODUCTO 2 -->
+
+
+<!-- =========================
+     PRODUCTO 2
+========================= -->
 
 <article class="product">
 
-<img
-src="producto-original.jpg"
-alt="NFC rectangular"
 
+<img
+    class="product-image"
+    src="nfc-rectangular.jpg"
+    alt="NFC rectangular"
 >
+
 
 <div class="product-body">
 
+
 <h3>
+
 NFC rectangular
+
 </h3>
 
-<div class="price">
+
+
+<div class="price-row">
+
+<span class="price">
+
 17,99 €
-<span class="old-price">
-24,99 €
+
 </span>
+
+
+<span class="old-price">
+
+24,99 €
+
+</span>
+
 </div>
 
-<a class="btn" href="#contacto">
+
+
+<a
+    class="btn product-button"
+    href="#contacto"
+>
+
 Quiero el mío
+
 </a>
+
 
 </div>
 
 </article>
 
-<!-- PRODUCTO 3 -->
+
+
+<!-- =========================
+     PRODUCTO 3
+========================= -->
 
 <article class="product">
 
-<img
-src="producto-original.jpg"
-alt="NFC con soporte y código QR"
 
+<img
+    class="product-image"
+    src="nfc-soporte-qr.jpg"
+    alt="NFC con soporte y código QR"
 >
+
 
 <div class="product-body">
 
+
 <h3>
+
 NFC con soporte y código QR
+
 </h3>
 
-<div class="price">
+
+
+<div class="price-row">
+
+<span class="price">
+
 22,99 €
-<span class="old-price">
-27,99 €
+
 </span>
+
+
+<span class="old-price">
+
+27,99 €
+
+</span>
+
 </div>
 
-<a class="btn" href="#contacto">
+
+
+<a
+    class="btn product-button"
+    href="#contacto"
+>
+
 Quiero el mío
+
 </a>
+
 
 </div>
 
 </article>
+
+
 
 </div>
 
@@ -528,69 +901,110 @@ Quiero el mío
 
 </section>
 
-<!-- COMO FUNCIONA -->
 
-<section class="how" id="como">
+
+<!-- =========================
+     COMO FUNCIONA
+========================= -->
+
+<section
+    class="how"
+    id="como"
+>
 
 <div class="wrap">
 
+
 <h2 class="title">
+
 Así de fácil
+
 </h2>
 
+
 <p class="subtitle">
+
 Una experiencia sencilla para tus clientes.
+
 </p>
+
+
 
 <div class="steps">
 
+
+
 <div class="step">
 
 <div class="icon">
+
 📱
+
 </div>
 
 <h3>
+
 1. Acerca el móvil
+
 </h3>
 
 <p>
+
 El cliente acerca su teléfono al producto NFC.
+
 </p>
 
 </div>
 
+
+
 <div class="step">
 
 <div class="icon">
+
 ⭐
+
 </div>
 
 <h3>
+
 2. Accede a tu reseña
+
 </h3>
 
 <p>
-El NFC o QR abre directamente el enlace que hayas configurado.
+
+El NFC o QR abre directamente el enlace configurado.
+
 </p>
 
 </div>
+
+
 
 <div class="step">
 
 <div class="icon">
+
 🚀
+
 </div>
 
 <h3>
+
 3. Consigue opiniones
+
 </h3>
 
 <p>
+
 Haz que dejar una reseña sea rápido y sencillo.
+
 </p>
 
 </div>
+
+
 
 </div>
 
@@ -598,33 +1012,53 @@ Haz que dejar una reseña sea rápido y sencillo.
 
 </section>
 
-<!-- CONTACTO -->
 
-<section class="cta" id="contacto">
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section
+    class="cta"
+    id="contacto"
+>
 
 <div class="wrap">
 
+
 <h2 class="title">
+
 ¿Quieres tu NFCstars?
+
 </h2>
 
+
 <p>
+
 Escríbenos y te ayudamos a elegir el producto adecuado para tu negocio.
+
 </p>
 
-<a
-class="btn gold"
-href="https://wa.me/34600000000?text=Hola%20NFCstars%2C%20estoy%20interesado%20en%20un%20producto%20NFC%20%2B%20QR."
 
+<a
+    class="btn btn-gold"
+    href="https://wa.me/34600000000?text=Hola%20NFCstars%2C%20estoy%20interesado%20en%20un%20producto%20NFC."
 >
 
-Pedir por WhatsApp </a>
+Pedir por WhatsApp
+
+</a>
+
 
 </div>
 
 </section>
 
-<!-- PIE -->
+
+
+<!-- =========================
+     PIE
+========================= -->
 
 <footer>
 
@@ -632,5 +1066,59 @@ Pedir por WhatsApp </a>
 
 </footer>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function selectColor(color) {
+
+    const whiteButton =
+        document.getElementById("white-button");
+
+    const blackButton =
+        document.getElementById("black-button");
+
+    const image =
+        document.getElementById("stand-image");
+
+
+    if (color === "white") {
+
+        whiteButton.classList.add("active");
+
+        blackButton.classList.remove("active");
+
+        image.src = "stand-nfc.jpg";
+
+    }
+
+
+    if (color === "black") {
+
+        blackButton.classList.add("active");
+
+        whiteButton.classList.remove("active");
+
+        /*
+        Cuando tengamos la foto real del modelo negro,
+        cambiaremos esta línea por:
+
+        image.src = "stand-nfc-negro.jpg";
+        */
+
+        image.src = "stand-nfc.jpg";
+
+    }
+
+}
+
+</script>
+
+
 </body>
+
 </html>
