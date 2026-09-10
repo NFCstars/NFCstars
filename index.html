@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NFCstars | Productos NFC + QR</title>
-
+<title>NFCstars | NFC + QR para negocios</title>
 
 <style>
 
@@ -21,10 +21,14 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #111;
-    background: #fff;
+    background: #ffffff;
     line-height: 1.5;
 }
 
@@ -36,9 +40,9 @@ body {
 header {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: white;
-    border-bottom: 1px solid #eee;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .nav {
@@ -61,6 +65,11 @@ header {
     color: #e4ad16;
 }
 
+.logo-star {
+    color: #e4ad16;
+    margin-left: 4px;
+}
+
 nav a {
     color: #222;
     text-decoration: none;
@@ -69,34 +78,38 @@ nav a {
     font-weight: 600;
 }
 
+nav a:hover {
+    color: #e4ad16;
+}
+
 
 /* =========================
    PORTADA
 ========================= */
 
 .hero {
-    background: #fafafa;
+    background: linear-gradient(135deg, #fafafa, #ffffff);
     padding: 75px 22px;
 }
 
 .hero-inner {
     max-width: 1180px;
     margin: auto;
-}
 
-.hero-copy {
-    text-align: center;
-    max-width: 820px;
-    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+
+    align-items: center;
 }
 
 .badge {
     display: inline-block;
 
     background: #111;
-    color: white;
+    color: #ffffff;
 
-    padding: 8px 13px;
+    padding: 8px 14px;
 
     border-radius: 30px;
 
@@ -106,7 +119,7 @@ nav a {
 }
 
 h1 {
-    font-size: 56px;
+    font-size: 58px;
     line-height: 1.02;
     letter-spacing: -2px;
 
@@ -119,7 +132,7 @@ h1 {
 
     max-width: 590px;
 
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
 }
 
 
@@ -131,7 +144,7 @@ h1 {
     display: inline-block;
 
     background: #111;
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -140,13 +153,47 @@ h1 {
     border-radius: 9px;
 
     font-weight: 700;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.btn.gold {
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-gold {
     background: #e4ad16;
     color: #111;
 
     margin-left: 10px;
+}
+
+
+/* =========================
+   FOTO PORTADA
+========================= */
+
+.hero-photo {
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 12px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.09);
+}
+
+.hero-photo img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 12px;
 }
 
 
@@ -180,24 +227,9 @@ section {
 
     max-width: 650px;
 
-    margin: 0 auto 45px;
-}
-
-
-/* =========================
-   ENVÍO
-========================= */
-
-.shipping-note {
-    text-align: center;
-
-    color: #999;
-
-    font-size: 13px;
-
-    margin-top: -28px;
-
-    margin-bottom: 35px;
+    margin:
+        0 auto
+        45px;
 }
 
 
@@ -208,38 +240,50 @@ section {
 .products {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 24px;
 }
 
 .product {
-    border: 1px solid #eee;
+    border:
+        1px solid #e7e7e7;
 
     border-radius: 18px;
 
     overflow: hidden;
 
-    background: white;
+    background: #ffffff;
 
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .product:hover {
     transform: translateY(-4px);
 
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.08);
 }
 
-.product img {
+
+/* FOTO DEL PRODUCTO */
+
+.product-image {
     width: 100%;
 
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
 
-    background: #f5f5f5;
+    display: block;
+
+    background: #f3f3f3;
 }
+
+
+/* CONTENIDO */
 
 .product-body {
     padding: 23px;
@@ -248,7 +292,57 @@ section {
 .product h3 {
     font-size: 22px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
+}
+
+
+/* =========================
+   SELECTOR BLANCO / NEGRO
+========================= */
+
+.color-title {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.color-selector {
+    display: flex;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid #dddddd;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+.color-selector button {
+    width: 50%;
+
+    padding: 10px;
+
+    border: none;
+
+    background: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.color-selector button.active {
+    background: #111;
+
+    color: #ffffff;
 }
 
 
@@ -256,12 +350,20 @@ section {
    PRECIOS
 ========================= */
 
+.price-row {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
 .price {
-    font-size: 25px;
+    font-size: 27px;
 
     font-weight: 800;
-
-    margin-bottom: 18px;
 }
 
 .old-price {
@@ -270,63 +372,26 @@ section {
     color: #888;
 
     text-decoration: line-through;
-
-    font-weight: 500;
-
-    margin-left: 8px;
 }
 
 
 /* =========================
-   SELECTOR DE COLOR
+   BOTÓN PRODUCTO
 ========================= */
 
-.color-selector {
-    margin-bottom: 18px;
-}
-
-.color-selector label {
-    font-size: 14px;
-
-    font-weight: 700;
-
-    display: block;
-
-    margin-bottom: 7px;
-}
-
-.color-selector select {
+.product-button {
     width: 100%;
 
-    padding: 11px 12px;
+    text-align: center;
 
-    border: 1px solid #ddd;
+    background: #e4ad16;
 
-    border-radius: 8px;
-
-    background: white;
-
-    font-size: 15px;
-
-    cursor: pointer;
+    color: #111;
 }
 
 
 /* =========================
-   DESCRIPCIÓN PERSONALIZADO
-========================= */
-
-.product-description {
-    color: #666;
-
-    font-size: 15px;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================
-   CÓMO FUNCIONA
+   COMO FUNCIONA
 ========================= */
 
 .how {
@@ -336,13 +401,14 @@ section {
 .steps {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 25px;
 }
 
 .step {
-    background: white;
+    background: #ffffff;
 
     border-radius: 18px;
 
@@ -367,30 +433,36 @@ section {
 ========================= */
 
 .cta {
-    background: #111;
+    background: #111111;
 
-    color: white;
+    color: #ffffff;
 
     text-align: center;
 }
 
+.cta .title {
+    color: #ffffff;
+}
+
 .cta p {
-    color: #ccc;
+    color: #cccccc;
 
     max-width: 600px;
 
-    margin: 12px auto 25px;
+    margin:
+        12px auto
+        25px;
 }
 
 
 /* =========================
-   PIE
+   FOOTER
 ========================= */
 
 footer {
     background: #0a0a0a;
 
-    color: #aaa;
+    color: #aaaaaa;
 
     text-align: center;
 
@@ -404,19 +476,30 @@ footer {
    MÓVIL
 ========================= */
 
-@media(max-width:800px) {
+@media (max-width: 800px) {
+
+    .nav {
+        padding: 15px;
+    }
 
     nav a {
-        margin-left: 9px;
+        margin-left: 8px;
 
         font-size: 12px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
     }
 
     h1 {
         font-size: 43px;
     }
 
-    .products,
+    .products {
+        grid-template-columns: 1fr;
+    }
+
     .steps {
         grid-template-columns: 1fr;
     }
@@ -429,7 +512,7 @@ footer {
         padding: 60px 18px;
     }
 
-    .btn.gold {
+    .btn-gold {
         margin-left: 5px;
     }
 
@@ -454,6 +537,8 @@ footer {
 <div class="logo">
 
 NFC<span>stars</span>
+
+<span class="logo-star">★</span>
 
 </div>
 
@@ -488,11 +573,15 @@ Contacto
      PORTADA
 ========================= -->
 
-<section class="hero" id="inicio">
+<section
+    class="hero"
+    id="inicio"
+>
 
 <div class="hero-inner">
 
-<div class="hero-copy">
+
+<div>
 
 <span class="badge">
 
@@ -503,7 +592,11 @@ NFC + QR · Soluciones para negocios
 
 <h1>
 
-Más reseñas. Más confianza. Más clientes.
+Más reseñas.
+<br>
+Más confianza.
+<br>
+Más clientes.
 
 </h1>
 
@@ -515,20 +608,39 @@ Facilita a tus clientes el acceso a tus reseñas con productos NFC y QR elegante
 </p>
 
 
-<a class="btn" href="#productos">
+<a
+    class="btn"
+    href="#productos"
+>
 
-Ver productos
+Ver productos →
 
 </a>
 
 
-<a class="btn gold" href="#contacto">
+<a
+    class="btn btn-gold"
+    href="#contacto"
+>
 
 Quiero el mío
 
 </a>
 
+
 </div>
+
+
+
+<div class="hero-photo">
+
+<img
+    src="stand-nfc.jpg"
+    alt="NFC con soporte"
+>
+
+</div>
+
 
 </div>
 
@@ -540,7 +652,9 @@ Quiero el mío
      PRODUCTOS
 ========================= -->
 
-<section id="productos">
+<section
+    id="productos"
+>
 
 <div class="wrap">
 
@@ -559,15 +673,9 @@ Elige la solución NFC + QR que mejor encaje con tu negocio.
 </p>
 
 
-<p class="shipping-note">
-
-Envío: 7–15 días laborables
-
-</p>
-
-
 
 <div class="products">
+
 
 
 <!-- =========================
@@ -578,9 +686,10 @@ Envío: 7–15 días laborables
 
 
 <img
-id="nfc-soporte-img"
-src="nfc-soporte-negro.jpg"
-alt="NFC con Soporte"
+    id="stand-image"
+    class="product-image"
+    src="stand-nfc.jpg"
+    alt="NFC con Soporte"
 >
 
 
@@ -594,42 +703,51 @@ NFC con Soporte
 </h3>
 
 
+
+<div class="color-title">
+
+Color
+
+</div>
+
+
+
 <div class="color-selector">
 
 
-<label for="color">
-
-Color:
-
-</label>
-
-
-<select id="color" name="color">
-
-
-<option value="blanco">
+<button
+    id="white-button"
+    class="active"
+    onclick="selectColor('white')"
+>
 
 Blanco
 
-</option>
+</button>
 
 
-<option value="negro" selected>
+<button
+    id="black-button"
+    onclick="selectColor('black')"
+>
 
 Negro
 
-</option>
-
-
-</select>
+</button>
 
 
 </div>
 
 
-<div class="price">
+
+<div class="price-row">
+
+<span class="price">
 
 17,99 €
+
+</span>
+
 
 <span class="old-price">
 
@@ -640,7 +758,11 @@ Negro
 </div>
 
 
-<a class="btn" href="#contacto">
+
+<a
+    class="btn product-button"
+    href="#contacto"
+>
 
 Quiero el mío
 
@@ -661,8 +783,9 @@ Quiero el mío
 
 
 <img
-src="producto-original.jpg"
-alt="NFC rectangular"
+    class="product-image"
+    src="nfc-rectangular.jpg"
+    alt="NFC rectangular"
 >
 
 
@@ -676,9 +799,15 @@ NFC rectangular
 </h3>
 
 
-<div class="price">
+
+<div class="price-row">
+
+<span class="price">
 
 17,99 €
+
+</span>
+
 
 <span class="old-price">
 
@@ -689,7 +818,11 @@ NFC rectangular
 </div>
 
 
-<a class="btn" href="#contacto">
+
+<a
+    class="btn product-button"
+    href="#contacto"
+>
 
 Quiero el mío
 
@@ -710,8 +843,9 @@ Quiero el mío
 
 
 <img
-src="producto-original.jpg"
-alt="NFC con soporte y código QR"
+    class="product-image"
+    src="nfc-soporte-qr.jpg"
+    alt="NFC con soporte y código QR"
 >
 
 
@@ -725,9 +859,15 @@ NFC con soporte y código QR
 </h3>
 
 
-<div class="price">
+
+<div class="price-row">
+
+<span class="price">
 
 22,99 €
+
+</span>
+
 
 <span class="old-price">
 
@@ -738,58 +878,12 @@ NFC con soporte y código QR
 </div>
 
 
-<a class="btn" href="#contacto">
 
-Quiero el mío
-
-</a>
-
-
-</div>
-
-</article>
-
-
-
-<!-- =========================
-     PRODUCTO 4
-========================= -->
-
-<article class="product">
-
-
-<img
-src="producto-original.jpg"
-alt="NFC personalizado"
+<a
+    class="btn product-button"
+    href="#contacto"
 >
 
-
-<div class="product-body">
-
-
-<h3>
-
-NFC personalizado
-
-</h3>
-
-
-<p class="product-description">
-
-Personalizamos el NFC para que lleve directamente a tu negocio.
-
-</p>
-
-
-<div class="price">
-
-27,99 €
-
-</div>
-
-
-<a class="btn" href="#contacto">
-
 Quiero el mío
 
 </a>
@@ -798,6 +892,7 @@ Quiero el mío
 </div>
 
 </article>
+
 
 
 </div>
@@ -809,10 +904,13 @@ Quiero el mío
 
 
 <!-- =========================
-     CÓMO FUNCIONA
+     COMO FUNCIONA
 ========================= -->
 
-<section class="how" id="como">
+<section
+    class="how"
+    id="como"
+>
 
 <div class="wrap">
 
@@ -835,8 +933,8 @@ Una experiencia sencilla para tus clientes.
 <div class="steps">
 
 
-<div class="step">
 
+<div class="step">
 
 <div class="icon">
 
@@ -844,13 +942,11 @@ Una experiencia sencilla para tus clientes.
 
 </div>
 
-
 <h3>
 
 1. Acerca el móvil
 
 </h3>
-
 
 <p>
 
@@ -858,13 +954,11 @@ El cliente acerca su teléfono al producto NFC.
 
 </p>
 
-
 </div>
 
 
 
 <div class="step">
-
 
 <div class="icon">
 
@@ -872,20 +966,17 @@ El cliente acerca su teléfono al producto NFC.
 
 </div>
 
-
 <h3>
 
 2. Accede a tu reseña
 
 </h3>
 
-
 <p>
 
-El NFC o QR abre directamente el enlace que hayas configurado.
+El NFC o QR abre directamente el enlace configurado.
 
 </p>
-
 
 </div>
 
@@ -893,13 +984,11 @@ El NFC o QR abre directamente el enlace que hayas configurado.
 
 <div class="step">
 
-
 <div class="icon">
 
 🚀
 
 </div>
-
 
 <h3>
 
@@ -907,15 +996,14 @@ El NFC o QR abre directamente el enlace que hayas configurado.
 
 </h3>
 
-
 <p>
 
 Haz que dejar una reseña sea rápido y sencillo.
 
 </p>
 
-
 </div>
+
 
 
 </div>
@@ -930,7 +1018,10 @@ Haz que dejar una reseña sea rápido y sencillo.
      CONTACTO
 ========================= -->
 
-<section class="cta" id="contacto">
+<section
+    class="cta"
+    id="contacto"
+>
 
 <div class="wrap">
 
@@ -950,8 +1041,8 @@ Escríbenos y te ayudamos a elegir el producto adecuado para tu negocio.
 
 
 <a
-class="btn gold"
-href="https://wa.me/34600000000?text=Hola%20NFCstars%2C%20estoy%20interesado%20en%20un%20producto%20NFC%20%2B%20QR."
+    class="btn btn-gold"
+    href="https://wa.me/34600000000?text=Hola%20NFCstars%2C%20estoy%20interesado%20en%20un%20producto%20NFC."
 >
 
 Pedir por WhatsApp
@@ -978,34 +1069,52 @@ Pedir por WhatsApp
 
 
 <!-- =========================
-     CAMBIO BLANCO / NEGRO
+     JAVASCRIPT
 ========================= -->
 
 <script>
 
-const color = document.getElementById("color");
+function selectColor(color) {
 
-const image = document.getElementById("nfc-soporte-img");
+    const whiteButton =
+        document.getElementById("white-button");
+
+    const blackButton =
+        document.getElementById("black-button");
+
+    const image =
+        document.getElementById("stand-image");
 
 
-color.addEventListener("change", function () {
+    if (color === "white") {
 
+        whiteButton.classList.add("active");
 
-    if (this.value === "negro") {
+        blackButton.classList.remove("active");
 
-        image.src = "nfc-soporte-negro.jpg";
+        image.src = "stand-nfc.jpg";
 
     }
 
 
-    else {
+    if (color === "black") {
 
-        image.src = "producto-original.jpg";
+        blackButton.classList.add("active");
+
+        whiteButton.classList.remove("active");
+
+        /*
+        Cuando tengamos la foto real del modelo negro,
+        cambiaremos esta línea por:
+
+        image.src = "stand-nfc-negro.jpg";
+        */
+
+        image.src = "stand-nfc.jpg";
 
     }
 
-
-});
+}
 
 </script>
 
